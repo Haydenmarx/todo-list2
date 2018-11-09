@@ -16,7 +16,7 @@ class InputToggle extends Component {
     this.setState({tempEdit: e.target.value});
   }
   updateProps = () => {
-    this.props.update(this.props.location, this.state.tempEdit);
+    this.props.update(this.state.tempEdit);
     this.toggleEditing();
   }
   render() {

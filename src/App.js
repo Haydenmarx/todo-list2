@@ -31,6 +31,8 @@ class App extends Component {
       lists[index].todos[todoKey].done = value;
     } else if (listKey === 'delete') {
       lists[index].todos.splice(todoKey, 1);
+    } else if (listKey === 'edit') {
+      lists[index].todos[todoKey].value = value;
     } else {
       lists[index][listKey] = value;
     }

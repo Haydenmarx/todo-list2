@@ -10,10 +10,14 @@ class Todo extends Component {
     this.props.editEntry(this.props.listIndex, 'delete', !this.props.todo.done, this.props.todoIndex);
   }
 
+  editTodo = (edited) => {
+    this.props.editEntry(this.props.listIndex, 'edit', edited, this.props.todoIndex);
+  }
+
   render() {
     return (
       <List.Item id={`${this.props.todoIndex}todo${this.props.listIndex}`} >
-        <InputToggle location={this.props.todoIndex} display={this.props.todo.value} update={this.editEntry}></InputToggle>
+        <InputToggle location={this.props.todoIndex} display={this.props.todo.value} update={this.editTodo}></InputToggle>
         <button disabled={!this.props.todo.done} onClick={this.removeTodo}>X</button>
         <Checkbox toggle checked={this.props.todo.done} onClick={this.toggleDone}/>
       </List.Item>
